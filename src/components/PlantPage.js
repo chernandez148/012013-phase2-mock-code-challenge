@@ -19,11 +19,30 @@ function PlantPage() {
     setPlantsData([...plantsData, plant]);
   }
 
+  function handleRemovePlant(id) {
+    const updatedPlants = plantsData.filter((plant) => plant.id !== id);
+    setPlantsData(updatedPlants);
+  }
+
+  function handleDeletePlant(id) {
+    fetch(fetchUrl + "/" + id, {
+      method: "DELETE",
+    }).then((resp) => {
+      if (resp.status === 200) {
+        handleRemovePlant(id);
+      }
+    });
+  }
+
   return (
     <main>
       <NewPlantForm fetchUrl={fetchUrl} handleAddNewPlant={handleAddNewPlant} />
       <Search setPlantSearch={setPlantSearch} />
-      <PlantList plantsData={plantsData} plantSearch={plantSearch} />
+      <PlantList
+        plantsData={plantsData}
+        plantSearch={plantSearch}
+        handleDeletePlant={handleDeletePlant}
+      />
     </main>
   );
 }

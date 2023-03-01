@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function PlantCard({ plant }) {
+function PlantCard({ plant, handleDeletePlant }) {
   const [soldOut, setSoldOut] = useState(true);
 
   const handleSoldOutClick = () => {
@@ -19,6 +19,7 @@ function PlantCard({ plant }) {
       ) : (
         <button>Out of Stock</button>
       )}
+      <button onClick={() => handleDeletePlant(plant.id)}>🗑️</button>
     </li>
   );
 }
