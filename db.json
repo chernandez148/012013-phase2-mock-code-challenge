@@ -41,6 +41,12 @@
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
       "price": 55
+    },
+    {
+      "name": "Christian Hernandez",
+      "image": "https://cdn.shopify.com/s/files/1/0550/8487/5830/products/Bead-Maze-002281-1-Pieces-Out_750x.progressive.jpg?v=1664892868",
+      "price": "22.20",
+      "id": 8
     }
   ]
 }
